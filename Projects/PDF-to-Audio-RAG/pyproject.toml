@@ -1,0 +1,42 @@
+[project]
+name = "pdf-to-audio-rag"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "torch>=2.7.0",
+    "torchvision>=0.22.0",
+    "pytorch-triton-xpu>=3.3.0 ; sys_platform == 'win32' or sys_platform == 'linux'",
+    "torchaudio>=2.7.1",
+    "jupyter>=1.1.1",
+    "huggingface_hub[hf_xet]>=0.33.2",
+    "transformers>=4.53.1",
+    "datasets==3.6.0",
+    "pypdf>=5.7.0",
+    "teapotai>=2.0.8",
+    "langchain-community>=0.3.27",
+    "langchain-text-splitters>=0.3.8",
+    "protobuf>=6.31.1",
+    "soundfile>=0.13.1",
+    "sentencepiece>=0.2.0"
+]
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-xpu", marker = "sys_platform == 'win32' or sys_platform == 'linux'" },
+]
+torchvision = [
+  { index = "pytorch-xpu", marker = "sys_platform == 'win32' or sys_platform == 'linux'" },
+]
+pytorch-triton-xpu = [
+  { index = "pytorch-xpu", marker = "sys_platform == 'win32' or sys_platform == 'linux'" },
+]
+torchaudio = [
+  { index = "pytorch-xpu", marker = "sys_platform == 'win32' or sys_platform == 'linux'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-xpu"
+url = "https://download.pytorch.org/whl/xpu"
+explicit = true
