@@ -12,4 +12,4 @@ Install the required libraries. Uninstall the libraries if you face any issues b
 ====================
 Some more Library packages needed:
 
-pip install huggingface_hub[hf_xet] transformers diffusers accelerate
+pip install huggingface_hub[hf_xet] transformers diffusers accelerate matplotlib
